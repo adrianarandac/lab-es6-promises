@@ -32,13 +32,13 @@
 
 getInstruction('mashedPotatoes',0,(step1)=> {
   document.querySelector("#mashedPotatoes").innerHTML += `<li>${step1}</li>`
-  getInstruction('mashedPotatoes',1,(step2)=> {
+  getInstruction('mashedPotatoes', 1,(step2)=> {
     document.querySelector("#mashedPotatoes").innerHTML += `<li>${step2}</li>`
-    getInstruction('mashedPotatoes',2,(step3)=> {
+    getInstruction('mashedPotatoes', 2,(step3)=> {
       document.querySelector("#mashedPotatoes").innerHTML += `<li>${step3}</li>`
-      getInstruction('mashedPotatoes',3,(step4)=> {
+      getInstruction('mashedPotatoes', 3,(step4)=> {
         document.querySelector("#mashedPotatoes").innerHTML += `<li>${step4}</li>`
-        getInstruction('mashedPotatoes',4,(step5)=> {
+        getInstruction('mashedPotatoes', 4,(step5)=> {
           document.querySelector("#mashedPotatoes").innerHTML += `<li>${step5}</li>`
             document.querySelector("#mashedPotatoes").innerHTML += `<li>Mashed potatoes are ready!</li>`
         })
@@ -52,7 +52,7 @@ getInstruction('mashedPotatoes',0,(step1)=> {
 
 obtainInstruction('steak',0)
   .then((step0)=> {
-    document.querySelector("#steak").innerHTML += `<li>${step0}</li>`
+    document.querySelector("#steak").innerHTML += `<li>${step0}</li>`;
     return obtainInstruction('steak', 1)
   })
     .then((step1)=> {
@@ -87,7 +87,24 @@ obtainInstruction('steak',0)
   
 
 // Iteration 3 using async/await
-// ...
 
+async function makeBroccoli() {
+  const step0 = await obtainInstruction("broccoli", 0);
+        console.log(); document.querySelector("#broccoli").innerHTML += `<li>${step0}</li>`;
+        const step1 = await obtainInstruction("broccoli", 1);
+        console.log(); document.querySelector("#broccoli").innerHTML += `<li>${step1}</li>`;        
+        const step2 = await obtainInstruction("broccoli", 2);
+        console.log(); document.querySelector("#broccoli").innerHTML += `<li>${step2}</li>`;        
+        const step3 = await obtainInstruction("broccoli", 3);
+        console.log(); document.querySelector("#broccoli").innerHTML += `<li>${step3}</li>`;        
+        const step4 = await obtainInstruction("broccoli", 4);
+        console.log(); document.querySelector("#broccoli").innerHTML += `<li>${step4}</li>`;        
+        const step5 = await obtainInstruction("broccoli", 5);
+        console.log(); document.querySelector("#broccoli").innerHTML += `<li>${step5}</li>`;        
+        const step6 = await obtainInstruction("broccoli", 6);
+        console.log(); document.querySelector("#broccoli").innerHTML += `<li>${step6}</li>`;        
+      }
+
+makeBroccoli()
 // Bonus 2 - Promise all
 // ...

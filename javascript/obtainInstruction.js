@@ -5,8 +5,7 @@
 // Promise based function
 function obtainInstruction(food, step) {
   return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      // Get the instruction string
+
       let instruction;
 
       if (food === "mashedPotatoes") {
@@ -23,7 +22,7 @@ function obtainInstruction(food, step) {
       };
       
 
-      // Resolve or reject the promise
+      
       if (!instruction) {
         reject("Instruction step does not exist!")
       }
@@ -31,7 +30,6 @@ function obtainInstruction(food, step) {
         resolve(instruction);
       }
 
-    }, Math.floor(Math.random() * 1000));
   });
 }
 
